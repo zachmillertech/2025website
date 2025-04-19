@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="400" height="600" viewBox="0 0 400 600">
+  <!-- Background -->
+  <rect width="400" height="600" fill="#1e40af" />
+  
+  <!-- Chart background -->
+  <rect x="100" y="200" width="200" height="200" rx="10" fill="white" />
+  
+  <!-- Chart grid -->
+  <line x1="100" y1="250" x2="300" y2="250" stroke="#eee" stroke-width="1" />
+  <line x1="100" y1="300" x2="300" y2="300" stroke="#eee" stroke-width="1" />
+  <line x1="100" y1="350" x2="300" y2="350" stroke="#eee" stroke-width="1" />
+  <line x1="150" y1="200" x2="150" y2="400" stroke="#eee" stroke-width="1" />
+  <line x1="200" y1="200" x2="200" y2="400" stroke="#eee" stroke-width="1" />
+  <line x1="250" y1="200" x2="250" y2="400" stroke="#eee" stroke-width="1" />
+  
+  <!-- Chart bars -->
+  <rect x="130" y="350" width="30" height="50" fill="#10b981" />
+  <rect x="170" y="320" width="30" height="80" fill="#10b981" />
+  <rect x="210" y="280" width="30" height="120" fill="#10b981" />
+  <rect x="250" y="240" width="30" height="160" fill="#10b981" />
+  
+  <!-- Chart title -->
+  <text x="200" y="220" font-family="Arial" font-size="14" font-weight="bold" fill="#1e40af" text-anchor="middle">SUCCESS METRICS</text>
+  
+  <!-- Trophy circle -->
+  <circle cx="200" cy="100" r="50" fill="white" />
+  
+  <!-- Trophy symbol -->
+  <text x="200" y="120" font-family="Arial" font-size="60" fill="#FFD700" text-anchor="middle">🏆</text>
+  
+  <!-- Text elements -->
+  <text x="200" y="450" font-family="Arial" font-size="24" font-weight="bold" fill="white" text-anchor="middle">TECHNOLOGY SUCCESS</text>
+  <text x="200" y="480" font-family="Arial" font-size="16" fill="white" text-anchor="middle">INNOVATION • GROWTH • RESULTS</text>
+  
+  <!-- Tech icons -->
+  <text x="100" y="530" font-family="Arial" font-size="30" fill="white" text-anchor="middle">💻</text>
+  <text x="200" y="530" font-family="Arial" font-size="30" fill="white" text-anchor="middle">⚙️</text>
+  <text x="300" y="530" font-family="Arial" font-size="30" fill="white" text-anchor="middle">🚀</text>
+</svg>

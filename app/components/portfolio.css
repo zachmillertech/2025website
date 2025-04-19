@@ -1,0 +1,32 @@
+.swipe-container {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+}
+
+.swipe-card {
+  transition: transform 0.3s ease-out;
+}
+
+.card-indicator {
+  display: inline-block;
+  height: 8px;
+  width: 8px;
+  border-radius: 50%;
+  margin: 0 4px;
+  transition: background-color 0.3s ease;
+}
+
+.card-indicator.active {
+  background-color: hsl(var(--primary));
+}
+
+.card-indicator.inactive {
+  background-color: hsl(var(--muted));
+}
+
+@media (min-width: 768px) {
+  .swipe-container {
+    display: none;
+  }
+}
