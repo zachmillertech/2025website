@@ -41,15 +41,11 @@ export default function Successes() {
         ))}
       </div>
       <div className="relative h-full min-h-[300px]">
-        {/* Option 1: SVG image */}
         <img
           src="/images/tech-success.svg"
           alt="Technology success visualization"
           className="w-full h-full object-cover rounded-lg"
         />
-
-        {/* Option 2: React component (uncomment if SVG doesn't work) */}
-        {/* <SuccessImage /> */}
       </div>
     </div>
   )
