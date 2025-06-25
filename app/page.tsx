@@ -1,14 +1,36 @@
+"use client"
+
+import { useState } from "react"
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs"
 import Header from "./components/Header"
 import About from "./components/About"
 import Pricing from "./components/Pricing"
 import Services from "./components/Services"
 import Successes from "./components/Successes"
-import Portfolio from "./components/Portfolio"
-import { Info, DollarSign, Briefcase, Trophy, FolderOpen } from "lucide-react"
+import EXOverview from "./components/EXOverview"
+import CXOverview from "./components/CXOverview"
+import FreshdeskConsulting from "./components/FreshdeskConsulting"
+import ZendeskConsulting from "./components/ZendeskConsulting"
+import FreshserviceConsulting from "./components/FreshserviceConsulting"
+import {
+  Info,
+  DollarSign,
+  Briefcase,
+  Trophy,
+  Users,
+  Headphones,
+  HelpCircle,
+  MessageCircle,
+  Settings,
+} from "lucide-react"
 
 export default function Home() {
   const currentYear = new Date().getFullYear()
+  const [activeView, setActiveView] = useState("about")
+
+  const handleViewChange = (view: string) => {
+    setActiveView(view)
+  }
 
   return (
     <div className="min-h-screen flex flex-col">
@@ -17,48 +39,109 @@ export default function Home() {
       {/* Tabs with content sections */}
       <div className="bg-background py-4">
         <div className="max-w-7xl mx-auto w-full px-4">
-          <Tabs defaultValue="about" className="w-full">
+          <Tabs value={activeView} onValueChange={setActiveView} className="w-full">
             <TabsList className="flex flex-wrap w-full p-1 bg-muted rounded-lg mb-6">
               <TabsTrigger
                 value="about"
-                className="flex-1 flex items-center justify-center gap-2 text-blue-600 data-[state=active]:bg-blue-100 data-[state=active]:text-blue-800 text-xs sm:text-sm p-2"
+                className="tab-trigger flex-1 flex items-center justify-center gap-2 text-blue-600 
+                data-[state=active]:bg-blue-600 data-[state=active]:text-white
+                text-xs sm:text-sm p-2"
               >
                 <Info size={16} />
                 <span className="hidden sm:inline">About</span>
               </TabsTrigger>
-              <TabsTrigger
-                value="pricing"
-                className="flex-1 flex items-center justify-center gap-2 text-green-600 data-[state=active]:bg-green-100 data-[state=active]:text-green-800 text-xs sm:text-sm p-2"
-              >
-                <DollarSign size={16} />
-                <span className="hidden sm:inline">Pricing</span>
-              </TabsTrigger>
+
+              {/* EX Tab with Dropdown */}
+              <div className="flex-1 relative">
+                <TabsTrigger
+                  value="ex"
+                  className="tab-trigger w-full flex items-center justify-center gap-2 text-indigo-600 
+                  data-[state=active]:bg-indigo-600 data-[state=active]:text-white
+                  text-xs sm:text-sm p-2"
+                >
+                  <Headphones size={16} />
+                  <span className="hidden sm:inline">EX</span>
+                  <div className="dropdown-menu">
+                    <button
+                      className="dropdown-item flex items-center gap-2"
+                      onClick={() => handleViewChange("freshservice")}
+                    >
+                      <Settings size={16} className="text-green-600" />
+                      Freshservice
+                    </button>
+                  </div>
+                </TabsTrigger>
+              </div>
+
+              {/* CX Tab with Dropdown */}
+              <div className="flex-1 relative">
+                <TabsTrigger
+                  value="cx"
+                  className="tab-trigger w-full flex items-center justify-center gap-2 text-teal-600 
+                  data-[state=active]:bg-teal-600 data-[state=active]:text-white
+                  text-xs sm:text-sm p-2"
+                >
+                  <Users size={16} />
+                  <span className="hidden sm:inline">CX</span>
+                  <div className="dropdown-menu">
+                    <button
+                      className="dropdown-item flex items-center gap-2"
+                      onClick={() => handleViewChange("freshdesk")}
+                    >
+                      <HelpCircle size={16} className="text-blue-600" />
+                      Freshdesk
+                    </button>
+                    <button
+                      className="dropdown-item flex items-center gap-2"
+                      onClick={() => handleViewChange("zendesk")}
+                    >
+                      <MessageCircle size={16} className="text-green-600" />
+                      Zendesk
+                    </button>
+                  </div>
+                </TabsTrigger>
+              </div>
+
               <TabsTrigger
                 value="services"
-                className="flex-1 flex items-center justify-center gap-2 text-purple-600 data-[state=active]:bg-purple-100 data-[state=active]:text-purple-800 text-xs sm:text-sm p-2"
+                className="tab-trigger flex-1 flex items-center justify-center gap-2 text-purple-600 
+                data-[state=active]:bg-purple-600 data-[state=active]:text-white
+                text-xs sm:text-sm p-2"
               >
                 <Briefcase size={16} />
                 <span className="hidden sm:inline">Services</span>
               </TabsTrigger>
               <TabsTrigger
                 value="successes"
-                className="flex-1 flex items-center justify-center gap-2 text-orange-600 data-[state=active]:bg-orange-100 data-[state=active]:text-orange-800 text-xs sm:text-sm p-2"
+                className="tab-trigger flex-1 flex items-center justify-center gap-2 text-orange-600 
+                data-[state=active]:bg-orange-600 data-[state=active]:text-white
+                text-xs sm:text-sm p-2"
               >
                 <Trophy size={16} />
                 <span className="hidden sm:inline">Successes</span>
               </TabsTrigger>
+
+              {/* Pricing Tab - at the end */}
               <TabsTrigger
-                value="portfolio"
-                className="flex-1 flex items-center justify-center gap-2 text-teal-600 data-[state=active]:bg-teal-100 data-[state=active]:text-teal-800 text-xs sm:text-sm p-2"
+                value="pricing"
+                className="tab-trigger flex-1 flex items-center justify-center gap-2 text-green-600 
+                data-[state=active]:bg-green-600 data-[state=active]:text-white
+                text-xs sm:text-sm p-2"
               >
-                <FolderOpen size={16} />
-                <span className="hidden sm:inline">Portfolio</span>
+                <DollarSign size={16} />
+                <span className="hidden sm:inline">Pricing</span>
               </TabsTrigger>
             </TabsList>
 
             {/* Tab content sections */}
             <TabsContent value="about" className="tab-content">
               <About />
+            </TabsContent>
+            <TabsContent value="ex" className="tab-content">
+              <EXOverview />
+            </TabsContent>
+            <TabsContent value="cx" className="tab-content">
+              <CXOverview />
             </TabsContent>
             <TabsContent value="pricing" className="tab-content">
               <Pricing />
@@ -69,8 +152,14 @@ export default function Home() {
             <TabsContent value="successes" className="tab-content">
               <Successes />
             </TabsContent>
-            <TabsContent value="portfolio" className="tab-content">
-              <Portfolio />
+            <TabsContent value="freshdesk" className="tab-content">
+              <FreshdeskConsulting />
+            </TabsContent>
+            <TabsContent value="zendesk" className="tab-content">
+              <ZendeskConsulting />
+            </TabsContent>
+            <TabsContent value="freshservice" className="tab-content">
+              <FreshserviceConsulting />
             </TabsContent>
           </Tabs>
         </div>
