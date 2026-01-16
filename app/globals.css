@@ -151,6 +151,12 @@ body {
   color: white;
 }
 
+/* Add hover style for Zoom tab */
+.tab-trigger.text-blue-500:hover:not([data-state="active"]) {
+  background-color: rgb(59 130 246); /* blue-500 */
+  color: white;
+}
+
 /* Dropdown menu styles */
 .dropdown-menu {
   position: absolute;
@@ -166,6 +172,7 @@ body {
   transform: translateY(-10px);
   transition: all 0.2s ease;
   z-index: 50;
+  min-width: 140px;
 }
 
 .tab-trigger:hover .dropdown-menu {
@@ -175,15 +182,19 @@ body {
 }
 
 .dropdown-item {
-  display: block;
+  display: flex;
+  align-items: center;
   width: 100%;
-  padding: 0.5rem 1rem;
+  padding: 0.75rem 1rem;
   text-align: left;
   color: #374151;
   transition: background-color 0.2s ease;
   border: none;
   background: none;
   cursor: pointer;
+  gap: 0.5rem;
+  font-size: 0.875rem;
+  white-space: nowrap;
 }
 
 .dropdown-item:hover {
@@ -205,8 +216,48 @@ body {
   filter: drop-shadow(0 0 2px rgba(255, 255, 255, 0.5));
 }
 
+/* Mobile optimizations */
 @media (max-width: 768px) {
   .hero-text {
     font-size: 1.5rem;
+  }
+
+  /* Mobile dropdown adjustments */
+  .dropdown-menu {
+    left: -20px;
+    right: -20px;
+    min-width: 160px;
+    max-width: 200px;
+    margin: 0 auto;
+  }
+
+  .dropdown-item {
+    padding: 1rem;
+    font-size: 0.9rem;
+    justify-content: center;
+  }
+
+  /* Ensure dropdowns don't get cut off on mobile */
+  .tab-trigger {
+    overflow: visible;
+  }
+
+  /* Better spacing for mobile tabs */
+  .tab-trigger .dropdown-menu {
+    margin-top: 2px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  .dropdown-menu {
+    left: -30px;
+    right: -30px;
+    min-width: 180px;
+  }
+
+  .dropdown-item {
+    padding: 1.25rem 1rem;
+    font-size: 1rem;
   }
 }

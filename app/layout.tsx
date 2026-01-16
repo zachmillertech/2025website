@@ -13,7 +13,7 @@ const poppins = Poppins({
 export const metadata: Metadata = {
   title: "Zach Miller Tech Consulting",
   description: "Technology and digital footprint management services",
-    generator: 'v0.dev'
+    generator: 'v0.app'
 }
 
 export default function RootLayout({

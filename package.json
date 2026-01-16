@@ -13,27 +13,27 @@
     "@radix-ui/react-label": "^2.0.2",
     "@radix-ui/react-select": "^1.2.2",
     "@radix-ui/react-tabs": "^1.0.4",
-    "class-variance-authority": "^0.7.1",
-    "clsx": "^2.1.1",
-    "lucide-react": "^0.454.0",
-    "next": "15.2.4",
-    "nodemailer": "latest",
-    "react": "^19",
-    "react-confetti-explosion": "latest",
-    "react-dom": "^19",
-    "tailwind-merge": "^2.5.5",
-    "tailwindcss-animate": "^1.0.7"
+    "class-variance-authority": "^0.7.0",
+    "clsx": "^2.0.0",
+    "lucide-react": "^0.263.1",
+    "next": "13.4.19",
+    "nodemailer": "^6.9.4",
+    "react": "18.2.0",
+    "react-confetti-explosion": "^2.1.2",
+    "react-dom": "18.2.0",
+    "tailwind-merge": "^1.14.0",
+    "tailwindcss-animate": "^1.0.6"
   },
   "devDependencies": {
-    "@types/node": "^22",
+    "@types/node": "20.5.6",
     "@types/nodemailer": "^6.4.9",
-    "@types/react": "^19",
-    "@types/react-dom": "^19",
+    "@types/react": "18.2.21",
+    "@types/react-dom": "18.2.7",
     "autoprefixer": "10.4.15",
     "eslint": "8.48.0",
     "eslint-config-next": "13.4.19",
-    "postcss": "^8.5",
+    "postcss": "8.4.28",
     "tailwindcss": "3.3.3",
-    "typescript": "^5"
+    "typescript": "5.2.2"
   }
 }
